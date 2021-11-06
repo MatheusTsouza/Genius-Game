@@ -6,6 +6,8 @@ const blue = document.querySelector('.bluePart');
 const red = document.querySelector('.redPart');
 const yellow = document.querySelector('.yellowPart');
 const green = document.querySelector('.greenPart');
+const scores = document.querySelector('#score');
+
 
 
 
@@ -41,7 +43,8 @@ let checkOrder = () => {
   }
 
   if(clickedOrder.length == order.length){
-    alert(`Pontuação: ${score},\nVocê acertou! Iniciando proximo nivel`);
+    scores.innerHTML = `Score: ${score}`
+    
     nextLevel();
   }
 }
@@ -79,6 +82,7 @@ let nextLevel = () => {
 
 let gameOver = () =>{
   alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\n Clique OK para iniciar um novo jogo`);
+  scores.innerHTML = `Score: 0`
   order = [];
   clickedOrder = [];
 
