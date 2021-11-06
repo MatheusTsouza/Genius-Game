@@ -1,4 +1,3 @@
-
 let order = [];
 let clickedOrder = [];
 let score = 0;
@@ -7,6 +6,7 @@ const blue = document.querySelector('.bluePart');
 const red = document.querySelector('.redPart');
 const yellow = document.querySelector('.yellowPart');
 const green = document.querySelector('.greenPart');
+
 
 
 
@@ -97,5 +97,7 @@ red.onclick =() => click(1);
 yellow.onclick =() => click(2);
 blue.onclick =() => click(3);
 
-
-playGame();
+document.getElementById('startButton').onclick = function() {
+  
+  playGame();
+}
