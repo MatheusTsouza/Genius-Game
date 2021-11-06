@@ -24,26 +24,30 @@ body {
   border-radius: 100%;
 }
 
-.bluePart {
+.blue {
   grid-area: bluePart;
   background-color: #177bc2;
   border-bottom-right-radius: 100%;
 }
 
-.redPart {
+.red {
   grid-area: redPart;
   background-color: #c21717;
   border-top-right-radius: 100%;
 }
 
-.greenPart {
+.green {
   grid-area: greenPart;
   background-color: #17c222;
   border-top-left-radius: 100%;
 }
 
-.yellowPart {
+.yellow {
   grid-area: yellowPart;
   background-color: #c2c217;
   border-bottom-left-radius: 100%;
+}
+
+.selected {
+  opacity: 0.8;
 }
