@@ -11,7 +11,7 @@ const green = document.querySelector('.greenPart');
 
 
 let sortedOrder = () => {
-  let colorOrder = Math.floor(Math.random()*4)
+  let colorOrder = Math.floor(Math.random() * 4);
   order[order.length] = colorOrder;
   clickedOrder = [];
   for(let i in order) {
@@ -23,22 +23,24 @@ let sortedOrder = () => {
 let lightColor = (element, time) => {
   time = time * 500;
   setTimeout(() =>{
+    
     element.classList.add('selected');
   }, time - 250);
+
   setTimeout(() => {
     element.classList.remove('selected');
-  });
+},time );
 }
 
 let checkOrder = () => {
   for(let i in clickedOrder) {
-    if(clickedOrder[element] != order[element]){
+    if(clickedOrder[i] != order[i]){
       gameOver();
       break;
     }
   }
 
-  if(clickedOrder.length === order.length){
+  if(clickedOrder.length == order.length){
     alert(`Pontuação: ${score},\nVocê acertou! Iniciando proximo nivel`);
     nextLevel();
   }
@@ -59,13 +61,13 @@ let createElement = (color) =>{
   if(color == 0){
     return green;
   }
-  else if(color === 1){
+  else if(color == 1){
     return red;
   }
-  else if(color === 2){
+  else if(color == 2){
     return yellow;
   }
-  else if(color === 3){
+  else if(color == 3){
     return blue;
   }
 }
