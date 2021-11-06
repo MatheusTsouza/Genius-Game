@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  background-color: #b1f0be;
+}
+
+.main-game {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genius {
+  display: grid;
+  width: 700px;
+  height: 700px;
+  grid-template-areas:
+    "greenPart redPart"
+    "yellowPart bluePart";
+  grid-gap: 8px;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.bluePart {
+  grid-area: bluePart;
+  background-color: #177bc2;
+  border-bottom-right-radius: 100%;
+}
+
+.redPart {
+  grid-area: redPart;
+  background-color: #c21717;
+  border-top-right-radius: 100%;
+}
+
+.greenPart {
+  grid-area: greenPart;
+  background-color: #17c222;
+  border-top-left-radius: 100%;
+}
+
+.yellowPart {
+  grid-area: yellowPart;
+  background-color: #c2c217;
+  border-bottom-left-radius: 100%;
+}
