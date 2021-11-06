@@ -1,3 +1,4 @@
+
 let order = [];
 let clickedOrder = [];
 let score = 0;
@@ -7,20 +8,16 @@ const red = document.querySelector('.redPart');
 const yellow = document.querySelector('.yellowPart');
 const green = document.querySelector('.greenPart');
 
-green.addEventListener('click', click(0));
-red.addEventListener('click', click(1));
-yellow.addEventListener('click', click(2));
-blue.addEventListener('click', click(3));
 
 
 let sortedOrder = () => {
   let colorOrder = Math.floor(Math.random()*4)
   order[order.length] = colorOrder;
   clickedOrder = [];
-  order.forEach(function(element){
-    let elementColor = createElement(order[element]);
-    lightColor(elementColor, Number(element) + 1);
-  });
+  for(let i in order) {
+    let elementColor = createElement(order[i]);
+    lightColor(elementColor, Number(i) + 1);
+  }
 }
 
 let lightColor = (element, time) => {
@@ -34,15 +31,15 @@ let lightColor = (element, time) => {
 }
 
 let checkOrder = () => {
-  clickedOrder.forEach(function(element){
+  for(let i in clickedOrder) {
     if(clickedOrder[element] != order[element]){
       gameOver();
       break;
     }
-  });
+  }
 
   if(clickedOrder.length === order.length){
-    alert('Pontuação: ${score},\nVocê acertou! Iniciando proximo nivel');
+    alert(`Pontuação: ${score},\nVocê acertou! Iniciando proximo nivel`);
     nextLevel();
   }
 }
@@ -79,15 +76,15 @@ let nextLevel = () => {
 }
 
 let gameOver = () =>{
-  alert('Pontuação: ${score}!\nVocê perdeu o jogo!\n Clique OK para iniciar um novo jogo');
+  alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\n Clique OK para iniciar um novo jogo`);
   order = [];
   clickedOrder = [];
 
   playGame();
 }
 
-let playGame = () =>{
-  alert('Bem vindo ao jogo Genius');
+let playGame = () => {
+  alert('Bem vindo ao Gênesis! Iniciando novo jogo!');
   score = 0;
 
   nextLevel();
@@ -97,5 +94,6 @@ green.onclick =() => click(0);
 red.onclick =() => click(1);
 yellow.onclick =() => click(2);
 blue.onclick =() => click(3);
+
 
 playGame();
