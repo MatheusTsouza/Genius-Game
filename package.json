@@ -4,7 +4,7 @@
   "description": "Game genius javascript",
   "main": "script.js",
   "scripts": {
-    "start": "node index"
+    "start": "index.html"
   },
   "repository": {
     "type": "git",
